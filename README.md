@@ -37,12 +37,13 @@ Searching through all the repositories you've got access to:
 $ gitlab-search [options] [command] <search-term>
 
 Options:
-  -V, --version                            output the version number
-  -g, --groups <group-names>               group(s) to find repositories in (separated with comma)
-  -f, --filename <filename>                only search for contents in given a file, glob matching with wildcards (*)
-  -e, --extension <file-extension>         only search for contents in files with given extension
-  -p, --path <path>                        only search in files in the given path
-  -h, --help                               output usage information
+  --version                            output the version number
+  --groups <group-names>               group(s) to find repositories in (separated with comma)
+  --filename <filename>                only search for contents in given a file, glob matching with wildcards (*)
+  --extension <file-extension>         only search for contents in files with given extension
+  --path <path>                        only search in files in the given path
+  --help                               output usage information
+  --branch                                 search using this branch, otherwise use project's default
 
 Commands:
   setup [options] <personal-access-token>  create configuration file

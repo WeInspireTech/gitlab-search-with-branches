@@ -5,6 +5,7 @@ let program = Commander.(make() |> version(packageJson##version));
 let main = (args, options) => {
   let getOption = optionName => Commander.getOption(options, optionName);
   let groups = getOption("groups");
+  let branchName = getOption("branch");
   let criterias =
     GitLab.{
       // daring to do an unsafe get operation below because commander.js *should* have
@@ -20,7 +21,7 @@ let main = (args, options) => {
   Js.Promise.(
     GitLab.fetchGroups(groups)
     |> then_(GitLab.fetchProjectsInGroups)
-    |> then_(GitLab.searchInProjects(criterias))
+    |> then_(GitLab.searchInProjects(branchName, criterias))
     |> then_(results =>
          resolve(Print.searchResults(criterias.term, results))
        )

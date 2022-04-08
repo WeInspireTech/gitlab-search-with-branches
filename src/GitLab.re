@@ -285,7 +285,7 @@ let searchUrlParameter = (criterias: searchCriterias): string => {
 
 // https://docs.gitlab.com/ee/api/search.html#scope-blobs-2
 let searchInProjects =
-    (criterias: searchCriterias, projects: array(project))
+    (branchName: string, criterias: searchCriterias, projects: array(project))
     : Js.Promise.t(array((project, array(searchResult)))) => {
   let requests =
     Array.map(projects, project =>
@@ -293,7 +293,8 @@ let searchInProjects =
         "/projects/"
         ++ string_of_int(project.id)
         ++ "/search?scope=blobs"
-        ++ searchUrlParameter(criterias),
+        ++ searchUrlParameter(criterias)
+        ++ branchName,
         Decode.searchResults(project),
       )
     );

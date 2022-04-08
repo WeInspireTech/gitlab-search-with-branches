@@ -1,6 +1,6 @@
 {
-  "name": "gitlab-search",
-  "version": "1.4.0",
+  "name": "gitlab-search-with-branches",
+  "version": "0.0.1",
   "scripts": {
     "build": "rimraf dist && bsb -make-world && ncc build lib/js/src/Main.bs.js --out dist",
     "start": "bsb -make-world -w",
@@ -10,9 +10,6 @@
   "keywords": [
     "GitLab"
   ],
-  "author": "Phillip Johnsen <johphi@gmail.com>",
-  "license": "MIT",
-  "repository": "github:phillipj/gitlab-search",
   "files": [
     "bin",
     "dist"
