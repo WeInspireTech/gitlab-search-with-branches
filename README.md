@@ -1,4 +1,4 @@
-# GitLab Search ![CI Build Status](https://github.com/phillipj/gitlab-search/workflows/CI/badge.svg)
+# GitLab Search !
 
 This is a command line tool that allows you to search for contents across all your GitLab repositories.
 That's something GitLab doesn't provide out of the box for non-enterprise users, but is extremely valuable
@@ -35,14 +35,16 @@ Searching through all the repositories you've got access to:
 
 ```
 $ gitlab-search [options] [command] <search-term>
+e.g. DEBUG=1 gitlab-search -g 10036 -b branch_name keyword
 
 Options:
-  -V, --version                            output the version number
-  -g, --groups <group-names>               group(s) to find repositories in (separated with comma)
-  -f, --filename <filename>                only search for contents in given a file, glob matching with wildcards (*)
-  -e, --extension <file-extension>         only search for contents in files with given extension
-  -p, --path <path>                        only search in files in the given path
-  -h, --help                               output usage information
+  --version                            output the version number
+  --groups <group-names>               group(s) to find repositories in (separated with comma)
+  --filename <filename>                only search for contents in given a file, glob matching with wildcards (*)
+  --extension <file-extension>         only search for contents in files with given extension
+  --path <path>                        only search in files in the given path
+  --help                               output usage information
+  --branch                             search using this branch, otherwise use project's default
 
 Commands:
   setup [options] <personal-access-token>  create configuration file
@@ -56,6 +58,7 @@ To search a self-hosted installation of GitLab, `setup` has options for, among o
 $ gitlab-search setup --help
 
 Usage: setup [options] <personal-access-token>
+e.g. gitlab-search setup --ignore-ssl --concurrency 5 --api-domain https://gitlab.company.com/ token
 
 create configuration file
 

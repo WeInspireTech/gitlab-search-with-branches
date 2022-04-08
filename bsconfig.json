@@ -1,12 +1,12 @@
 {
   "name": "gitlab-repo-search",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "sources": {
     "dir" : "src",
     "subdirs" : true
   },
   "package-specs": {
-    "module": "commonjs",
+    "module": "commonjs"
   },
   "suffix": ".bs.js",
   "bs-dependencies": [
