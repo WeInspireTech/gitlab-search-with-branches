@@ -1,5 +1,5 @@
 {
-  "name": "gitlab-search",
+  "name": "wit-gitlab-search",
   "version": "0.0.1",
   "scripts": {
     "build": "rimraf dist && bsb -make-world && ncc build lib/js/src/Main.bs.js --out dist",
@@ -14,7 +14,9 @@
     "bin",
     "dist"
   ],
-  "bin": "bin/gitlab-search.js",
+  "bin": {
+    "wit-gitlab-search": "bin/gitlab-search.js"
+  },
   "devDependencies": {
     "@glennsl/bs-json": "^5.0.2",
     "@zeit/ncc": "^0.22.0",
@@ -24,5 +26,21 @@
     "commander": "^5.0.0",
     "rc": "^1.2.8",
     "rimraf": "^3.0.2"
-  }
+  },
+  "description": "This is a command line tool that allows you to search for contents across all your GitLab repositories.\r That's something GitLab doesn't provide out of the box for non-enterprise users, but is extremely valuable\r when needed.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WeInspireTech/wit-gitlab-search.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WeInspireTech/wit-gitlab-search/issues"
+  },
+  "homepage": "https://github.com/WeInspireTech/wit-gitlab-search#readme"
 }
