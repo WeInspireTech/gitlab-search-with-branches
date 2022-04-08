@@ -44,7 +44,7 @@ Options:
   --extension <file-extension>         only search for contents in files with given extension
   --path <path>                        only search in files in the given path
   --help                               output usage information
-  --branch                             search using this branch, otherwise use project's default
+  --branch                             search on this branch, otherwise use master
 
 Commands:
   setup [options] <personal-access-token>  create configuration file
