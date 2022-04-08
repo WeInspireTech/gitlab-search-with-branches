@@ -12,13 +12,13 @@ when needed.
 ## Installation
 
 ```
-$ npm install -g gitlab-search
+$ npm install -g wit-gitlab-search
 ```
 
 To finish the installation you need to configure the personal access token you've created previously:
 
 ```
-$ gitlab-search setup <your personal access token>
+$ wit-gitlab-search setup <your personal access token>
 ```
 
 That will create a `.gitlabsearchrc` file in the current directory. That configuration file can be placed
@@ -26,7 +26,7 @@ in different places on your machine, valid locations are described in the [rc pa
 You can decide where that file is saved when invoking the setup command, see more details in its help:
 
 ```
-$ gitlab-search setup --help
+$ wit-gitlab-search setup --help
 ```
 
 ## Usage
@@ -34,8 +34,8 @@ $ gitlab-search setup --help
 Searching through all the repositories you've got access to:
 
 ```
-$ gitlab-search [options] [command] <search-term>
-e.g. DEBUG=1 gitlab-search -g 10036 -b branch_name keyword
+$ wit-gitlab-search [options] [command] <search-term>
+e.g. DEBUG=1 wit-gitlab-search -g 10036 -b branch_name keyword
 
 Options:
   --version                            output the version number
@@ -55,10 +55,10 @@ Commands:
 To search a self-hosted installation of GitLab, `setup` has options for, among other things, setting a custom domain:
 
 ```
-$ gitlab-search setup --help
+$ wit-gitlab-search setup --help
 
 Usage: setup [options] <personal-access-token>
-e.g. gitlab-search setup --ignore-ssl --concurrency 5 --api-domain https://gitlab.company.com/ token
+e.g. wit-gitlab-search setup --ignore-ssl --concurrency 5 --api-domain https://gitlab.company.com/ token
 
 create configuration file
 
@@ -75,10 +75,10 @@ Options:
 
 ## Debugging
 
-If something seems fishy or you're just curious what `gitlab-search` does under the hood, enabling debug logging helps:
+If something seems fishy or you're just curious what `wit-gitlab-search` does under the hood, enabling debug logging helps:
 
 ```
-$ DEBUG=1 gitlab-search here-is-my-search-term
+$ DEBUG=1 wit-gitlab-search here-is-my-search-term
 Requesting: GET https://gitlab.com/api/v4/groups?per_page=100
 Using groups: name-of-group1, name-of-group2
 Requesting: GET https://gitlab.com/api/v4/groups/42/projects?per_page=100

@@ -53,7 +53,7 @@ let setup = (args, options) => {
   Print.successful(
     "Successfully wrote config to "
     ++ configPath
-    ++ ", gitlab-search is now ready to be used",
+    ++ ", wit-gitlab-search is now ready to be used",
   );
 };
 
