@@ -1,5 +1,5 @@
 {
-  "name": "gitlab-repo-search-with-branches",
+  "name": "gitlab-repo-search",
   "version": "0.0.1",
   "sources": {
     "dir" : "src",

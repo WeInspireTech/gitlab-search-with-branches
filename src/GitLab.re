@@ -283,9 +283,13 @@ let searchUrlParameter = (criterias: searchCriterias): string => {
   ++ Js.Array.joinWith(" ", filters);
 };
 
+let addBranchName = (branchName) => {
+  "&ref=" ++ Belt.Option.getWithDefault(branchName, "master")
+}
+
 // https://docs.gitlab.com/ee/api/search.html#scope-blobs-2
 let searchInProjects =
-    (branchName: string, criterias: searchCriterias, projects: array(project))
+    (branchName: option(string), criterias: searchCriterias, projects: array(project))
     : Js.Promise.t(array((project, array(searchResult)))) => {
   let requests =
     Array.map(projects, project =>
@@ -293,8 +297,8 @@ let searchInProjects =
         "/projects/"
         ++ string_of_int(project.id)
         ++ "/search?scope=blobs"
-        ++ searchUrlParameter(criterias)
-        ++ branchName,
+        ++ addBranchName(branchName)
+        ++ searchUrlParameter(criterias),
         Decode.searchResults(project),
       )
     );

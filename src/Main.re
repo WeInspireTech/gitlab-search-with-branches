@@ -72,6 +72,10 @@ Commander.(
        "-e, --extension <file-extension>",
        "only search for contents in files with given extension",
      )
+  |> option(
+       "-b, --branch <branch-name>",
+       "only search for contents this branch",
+  )
   |> option("-p, --path <path>", "only search in files in the given path")
   |> action(main)
 );
